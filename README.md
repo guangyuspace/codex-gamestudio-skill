@@ -1,5 +1,7 @@
 # Codex Game Studio Skill
 
+![Codex Game Studio Skill hero](assets/codex-gamestudio-skill-hero-real-pencil.png)
+
 A Codex skill for game-development work using a compact multi-discipline studio workflow.
 
 This skill helps Codex reason like a small game team when planning, building, testing, and polishing game projects. It is especially useful for Godot, Unity, Phaser, WebGL, 2D prototypes, gameplay systems, UI/HUD work, QA, game feel, and phase planning.
