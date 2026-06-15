@@ -89,3 +89,41 @@
 ## Recommended Next Phase
 - 
 ```
+## Long Project Handoff
+
+```md
+# CODEX_HANDOFF
+
+## Project Goal
+
+## Current Phase
+- Phase:
+- Status:
+
+## Latest Completed Work
+- 
+
+## Important Modified Files
+- 
+
+## Verification
+- Command:
+- Result:
+
+## Known Risks
+- 
+
+## Next Safest Task
+- 
+```
+
+## Response Handoff Block
+
+```text
+【交接狀態】
+- CODEX_HANDOFF.md 是否已更新：
+- 本次修改檔案：
+- 測試結果：
+- 目前風險：
+- 下一個最安全任務：
+```

@@ -22,6 +22,27 @@ When activated, the skill asks Codex to approach game work through roles such as
 
 It does not run multiple background agents. It gives Codex a disciplined workflow for choosing the right perspectives before acting.
 
+## Long Project Handoff
+
+For long-running game projects, this skill can maintain a project-local `CODEX_HANDOFF.md` so Codex can continue after context compression or a later session.
+
+Recommended project instruction:
+
+```text
+Keep developing this game project across phases.
+Update CODEX_HANDOFF.md after each substantial task.
+End every substantial response with:
+
+【交接狀態】
+- CODEX_HANDOFF.md 是否已更新：
+- 本次修改檔案：
+- 測試結果：
+- 目前風險：
+- 下一個最安全任務：
+```
+
+This is especially useful for Godot projects with many phases, scene/script changes, smoke tests, and QA passes.
+
 ## Install
 
 Copy this folder into your Codex skills directory:
@@ -68,3 +89,4 @@ The original project is licensed under the MIT License. See `NOTICE.md` for attr
 ## License
 
 MIT License. See `LICENSE`.
+

@@ -52,7 +52,37 @@ For implementation tasks, normally use this order:
 3. State any important assumptions briefly if they affect scope.
 4. Create or update only the files needed for the requested game change.
 5. For Godot work, preserve scene/script/resource relationships and run available headless checks when practical.
-6. End with what changed, what was verified, and the next useful studio task.
+6. For long-running projects, maintain a project-local `CODEX_HANDOFF.md` whenever the user asks for persistent continuity, phase-by-phase development, or one-conversation project completion.
+7. End with what changed, what was verified, and the next useful studio task.
+
+## Long Project Handoff
+
+Use this protocol when the user wants to keep building one game across many turns, context compactions, or phase handoffs.
+
+Create or update `CODEX_HANDOFF.md` in the project root. Keep it concise and current:
+
+- current game/project goal
+- current phase and phase status
+- latest completed work
+- modified files that matter
+- test commands and results
+- known risks or unverified areas
+- next safest task
+
+At the end of every substantial response in a long-running game project, append:
+
+```text
+【交接狀態】
+- CODEX_HANDOFF.md 是否已更新：
+- 本次修改檔案：
+- 測試結果：
+- 目前風險：
+- 下一個最安全任務：
+```
+
+If no files changed, still fill the handoff block honestly. If `CODEX_HANDOFF.md` was not updated, say why.
+
+Before major architecture changes, destructive file operations, core gameplay pivots, publishing, or uploads, pause and ask the user for confirmation.
 
 ## Mode Selection
 
@@ -82,7 +112,7 @@ Choose deliverables that fit the request:
 - `references/roles.md`: compact role responsibilities and handoff rules
 - `references/workflows.md`: phase workflows and quality gates
 - `references/godot.md`: Godot-focused engineering and QA guidance
-- `references/templates.md`: reusable briefs, specs, and test templates
+- `references/templates.md`: reusable briefs, specs, handoff notes, and test templates
 
 ## Source Note
 
@@ -91,3 +121,4 @@ This Codex skill is a concise adaptation inspired by:
 `https://github.com/pamirtuna/gamestudio-subagents`
 
 It does not require Claude Code and does not execute that repository's sub-agent runtime. Use the linked project as source inspiration and this skill as the active Codex workflow.
+
