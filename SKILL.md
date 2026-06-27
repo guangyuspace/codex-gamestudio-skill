@@ -106,8 +106,13 @@ When the same failure has already resisted multiple attempted fixes, read `refer
 
 ## Source Note
 
-This Codex skill is a concise adaptation inspired by:
+This Codex skill is primarily inspired by:
 
-`https://github.com/pamirtuna/gamestudio-subagents`
+- `https://github.com/pamirtuna/gamestudio-subagents`
 
-It also incorporates user-requested minimal implementation, asset-routing, and handoff rules for Codex game projects. It does not require Claude Code and does not execute that repository's sub-agent runtime.
+It also incorporates workflow concepts from:
+
+- `https://github.com/DietrichGebert/ponytail`
+- `https://github.com/0x0funky/agent-sprite-forge`
+
+It incorporates user-requested minimal implementation, asset-routing, and handoff rules for Codex game projects. It does not require Claude Code and does not execute those projects' runtimes, scripts, or assets.

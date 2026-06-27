@@ -100,11 +100,16 @@ references/
 
 ## Attribution
 
-This Codex skill is inspired by and adapted from:
+This Codex skill is primarily inspired by and adapted from:
 
-https://github.com/pamirtuna/gamestudio-subagents
+- https://github.com/pamirtuna/gamestudio-subagents
 
-The original project is licensed under the MIT License. See `NOTICE.md` for attribution details.
+It also references and integrates workflow concepts from these open-source skills:
+
+- https://github.com/DietrichGebert/ponytail
+- https://github.com/0x0funky/agent-sprite-forge
+
+This repository does not bundle or execute those projects' full runtimes, scripts, or assets. It summarizes game-studio, minimal-change, and sprite/map asset-routing rules into a Codex-native `gamestudio` skill. See `NOTICE.md` for attribution details.
 
 ## License
 

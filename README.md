@@ -100,11 +100,16 @@ references/
 
 ## 來源與致謝
 
-這個 Codex skill 受到以下專案啟發並改寫：
+這個 Codex skill 主要受到以下專案啟發並改寫：
 
-https://github.com/pamirtuna/gamestudio-subagents
+- https://github.com/pamirtuna/gamestudio-subagents
 
-原始專案使用 MIT License。詳細來源標示請見 `NOTICE.md`。
+另外也參考並整合了以下開源 skill 的工作流概念：
+
+- https://github.com/DietrichGebert/ponytail
+- https://github.com/0x0funky/agent-sprite-forge
+
+本 repo 沒有打包或執行上述專案的完整 runtime、scripts 或 assets；只是把遊戲工作室、最小可行修改、sprite/map 素材路由等規則整理成 Codex 可用的 `gamestudio` skill。詳細來源標示請見 `NOTICE.md`。
 
 ## 授權
 
