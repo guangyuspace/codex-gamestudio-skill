@@ -1,29 +1,27 @@
 ---
 name: gamestudio
-description: Use when building, planning, balancing, testing, or polishing a game project, especially Godot, Unity, Phaser, or 2D prototype work that benefits from a multi-discipline game studio workflow with producer, designer, engineer, artist, UI/UX, analytics, and QA perspectives.
-metadata:
-  short-description: Multi-role game studio workflow for Codex
+description: Use as the default full-game workflow when Codex should plan, build, debug, polish, QA, or finish a game project in one conversation when feasible, especially Godot, Unity, Phaser, WebGL, 2D prototypes, gameplay systems, maps, sprites, animation sheets, asset integration, long-running phase handoff, or repeated bug investigation. Combines compact game-studio roles, minimal-solution discipline, 2D sprite/map asset routing, CODEX_HANDOFF.md continuity, and DEBUG_HANDOFF.md root-cause stop rules.
 ---
 
 # Game Studio
 
-This skill adapts the public `pamirtuna/gamestudio-subagents` game-development team concept into a Codex-native workflow. Use it as a disciplined studio lens, not as a separate agent runtime.
+This skill adapts the public `pamirtuna/gamestudio-subagents` game-development team concept into a Codex-native workflow. Use it as the active game-development workflow, not as a separate agent runtime.
 
-## When To Use
+## Core Rules
 
-Use this skill when the user asks to:
-
-- plan or build a game feature, phase, prototype, demo, vertical slice, or full game
-- work on Godot, Unity, Phaser, WebGL, or general 2D/3D gameplay code
-- design battle systems, boards, progression, economy, UI/HUD, content, levels, maps, or game feel
-- review a game feature for quality, polish, performance, UX, or release readiness
-- coordinate multiple game-development concerns before implementation
-
-Do not use this skill for isolated non-game code tasks unless game domain judgment matters.
+1. Finish the assigned game goal in the same conversation whenever feasible.
+2. Use the smallest working change that actually solves the problem. Avoid speculative systems, broad rewrites, new dependencies, and extra files unless they clearly reduce risk.
+3. Inspect the existing project before changing it. Prefer the project's engine conventions, helper APIs, scene structure, import settings, and test patterns.
+4. Choose the smallest useful set of studio roles for the current task.
+5. For Godot work, preserve scene/script/resource relationships and run available headless checks when practical.
+6. For generated 2D game assets, route actors, props, FX, projectiles, and animation sheets through sprite guidance; route maps, stages, battle backgrounds, tilemaps, parallax scenes, and collision layouts through map guidance.
+7. For transparent extraction or chroma-key sprite workflows, request a solid green `#00FF00` background first. Use solid magenta `#FF00FF` only when green conflicts with the subject palette, vegetation/map art, edge cleanup, or the generated output fails green-key processing.
+8. For long-running projects, update project-local `CODEX_HANDOFF.md` after each completed task or phase.
+9. If the same error survives repeated fixes, stop editing code and create or update `DEBUG_HANDOFF.md` before any further code changes. Do not continue implementation until a root-cause hypothesis is testable.
 
 ## Operating Model
 
-Think like a compact game studio. Before acting, choose the smallest useful set of roles:
+Think like a compact game studio. Before acting, choose only the roles that matter:
 
 - Producer: scope, phase plan, risks, acceptance criteria, milestone readiness
 - Sr Game Designer: vision, pillars, systems, player journey, success metrics
@@ -47,13 +45,22 @@ For implementation tasks, normally use this order:
 
 ## Required Workflow
 
-1. Inspect existing project structure first. Prefer local architecture and engine conventions.
-2. Identify the current phase: design, prototype, development, polish, release, or maintenance.
+1. Identify the current phase: design, prototype, development, polish, release, or maintenance.
+2. Read the relevant files and current handoff docs before editing.
 3. State any important assumptions briefly if they affect scope.
-4. Create or update only the files needed for the requested game change.
-5. For Godot work, preserve scene/script/resource relationships and run available headless checks when practical.
-6. For long-running projects, maintain a project-local `CODEX_HANDOFF.md` whenever the user asks for persistent continuity, phase-by-phase development, or one-conversation project completion.
-7. End with what changed, what was verified, and the next useful studio task.
+4. Implement the smallest safe slice.
+5. Run the most relevant available check, smoke test, or manual verification.
+6. Update `CODEX_HANDOFF.md` for substantial project work or when continuity is requested.
+7. End with what changed, what was verified, current risk, and the next safest task.
+
+## Mode Selection
+
+- Design mode: produce vision, systems, specs, art direction, UX flows, and testable acceptance criteria without heavy code.
+- Prototype mode: build the smallest playable loop, instrument obvious debug hooks, and keep assets replaceable.
+- Development mode: implement production-shaped systems, data definitions, resources, tests, and docs.
+- Polish mode: tune responsiveness, readability, effects, UI states, performance, audio, and player feedback.
+- QA mode: investigate defects, create repro steps, run checks, and harden regression coverage.
+- Asset mode: plan, generate, integrate, and QA sprites, maps, animation sheets, import metadata, and collision/runtime hooks.
 
 ## Long Project Handoff
 
@@ -82,37 +89,20 @@ At the end of every substantial response in a long-running game project, append:
 
 If no files changed, still fill the handoff block honestly. If `CODEX_HANDOFF.md` was not updated, say why.
 
-Before major architecture changes, destructive file operations, core gameplay pivots, publishing, or uploads, pause and ask the user for confirmation.
+## Repeated Bug Rule
 
-## Mode Selection
-
-- Design mode: produce vision, systems, specs, art direction, UX flows, and testable acceptance criteria without heavy code.
-- Prototype mode: build the smallest playable loop, instrument obvious debug hooks, and keep assets replaceable.
-- Development mode: implement production-shaped systems, data definitions, resources, tests, and docs.
-- Polish mode: tune responsiveness, readability, effects, UI states, performance, and player feedback.
-- QA mode: investigate defects, create repro steps, run checks, and harden regression coverage.
-
-## Deliverables
-
-Choose deliverables that fit the request:
-
-- feature brief
-- implementation plan
-- Godot scene/script/resource changes
-- gameplay system code
-- tuning table or resource data
-- UX flow or HUD layout
-- art direction or asset request list
-- smoke test or QA checklist
-- bug report with repro and acceptance criteria
-- phase completion report
+When the same failure has already resisted multiple attempted fixes, read `references/handoff-debug.md`, create or update `DEBUG_HANDOFF.md`, and stop code changes until the next hypothesis can be verified by a minimal repro, log, command, or smoke test.
 
 ## References
 
 - `references/roles.md`: compact role responsibilities and handoff rules
 - `references/workflows.md`: phase workflows and quality gates
+- `references/minimal-workflow.md`: minimal implementation discipline and phase flow
+- `references/asset-routing.md`: sprite, map, chroma-key, and asset QA routing
 - `references/godot.md`: Godot-focused engineering and QA guidance
-- `references/templates.md`: reusable briefs, specs, handoff notes, and test templates
+- `references/templates.md`: reusable briefs, specs, handoff notes, debug handoff, and test templates
+- `references/handoff-debug.md`: `CODEX_HANDOFF.md` and `DEBUG_HANDOFF.md` protocols
+- `references/source-boundary.md`: attribution and publishing boundary
 
 ## Source Note
 
@@ -120,5 +110,4 @@ This Codex skill is a concise adaptation inspired by:
 
 `https://github.com/pamirtuna/gamestudio-subagents`
 
-It does not require Claude Code and does not execute that repository's sub-agent runtime. Use the linked project as source inspiration and this skill as the active Codex workflow.
-
+It also incorporates user-requested minimal implementation, asset-routing, and handoff rules for Codex game projects. It does not require Claude Code and does not execute that repository's sub-agent runtime.

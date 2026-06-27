@@ -8,6 +8,8 @@
 
 它特別適合 Godot、Unity、Phaser、WebGL、2D 原型、玩法系統、UI/HUD、QA、遊戲手感與 Phase 規劃。
 
+新版整合了長專案工作規則：盡量在同一個對話完成目標、採用最小可行修改、每個重要階段維護 `CODEX_HANDOFF.md`，同一個錯誤多次修不好時先建立 `DEBUG_HANDOFF.md` 釐清根因。
+
 ## 它能做什麼
 
 啟用後，這個 skill 會讓 Codex 用多個遊戲開發角色一起判斷問題：
@@ -25,6 +27,12 @@
 - 數據分析：指標、遙測、平衡依據
 
 它不會真的在背景啟動多個 agent。它的用途是讓 Codex 在行動前，用更完整的遊戲開發流程選擇正確視角。
+
+另外它也加入了遊戲素材路由規則：
+
+- 角色、怪物、道具、投射物、特效、動畫表走 sprite 工作流
+- 地圖、關卡、戰鬥背景、tilemap、parallax、碰撞區走 map 工作流
+- 需要透明去背或 chroma key 的產圖，優先用純綠 `#00FF00` 背景；綠色會干擾主體或去背失敗時，才改用洋紅 `#FF00FF`
 
 ## 長專案交接
 
@@ -46,6 +54,10 @@
 ```
 
 這對 Godot 專案很有用，尤其是有很多 Phase、場景、腳本、smoke test 和 QA 檢查時。
+
+## 重複錯誤排查
+
+如果同一個錯誤修了好幾次還沒有解決，這個 skill 會要求 Codex 暫停繼續亂改，先建立或更新 `DEBUG_HANDOFF.md`，記錄錯誤現象、重現步驟、已嘗試修法、失敗原因、根因假設與下一個驗證步驟。
 
 ## 安裝
 
@@ -76,8 +88,12 @@ $gamestudio 實作下一個可玩的原型切片，並定義 QA 檢查。
 ```text
 SKILL.md
 references/
+  asset-routing.md
   godot.md
+  handoff-debug.md
+  minimal-workflow.md
   roles.md
+  source-boundary.md
   templates.md
   workflows.md
 ```

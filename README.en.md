@@ -8,6 +8,8 @@ A Codex skill for game-development work using a compact multi-discipline studio 
 
 This skill helps Codex reason like a small game team when planning, building, testing, and polishing game projects. It is especially useful for Godot, Unity, Phaser, WebGL, 2D prototypes, gameplay systems, UI/HUD work, QA, game feel, and phase planning.
 
+The latest version also includes long-project operating rules: finish the assigned goal in one conversation when feasible, prefer the smallest working change, maintain `CODEX_HANDOFF.md` after substantial phases, and create `DEBUG_HANDOFF.md` before further code changes when the same error survives repeated fixes.
+
 ## What It Does
 
 When activated, the skill asks Codex to approach game work through roles such as:
@@ -25,6 +27,12 @@ When activated, the skill asks Codex to approach game work through roles such as
 - Data Scientist: metrics, telemetry, balancing signals
 
 It does not run multiple background agents. It gives Codex a disciplined workflow for choosing the right perspectives before acting.
+
+It also includes game asset routing rules:
+
+- characters, creatures, props, projectiles, FX, and animation sheets use the sprite workflow
+- maps, levels, battle backgrounds, tilemaps, parallax scenes, and collision zones use the map workflow
+- image generation that needs transparent extraction or chroma key should request solid green `#00FF00` first; use magenta `#FF00FF` only when green conflicts with the subject or cleanup fails
 
 ## Long Project Handoff
 
@@ -46,6 +54,10 @@ End every substantial response with:
 ```
 
 This is especially useful for Godot projects with many phases, scene/script changes, smoke tests, and QA passes.
+
+## Repeated Bug Debugging
+
+When the same error has already survived multiple attempted fixes, this skill tells Codex to stop making more code edits and first create or update `DEBUG_HANDOFF.md` with the symptom, repro steps, attempted fixes, failure reasons, root-cause hypotheses, and next validation step.
 
 ## Install
 
@@ -76,8 +88,12 @@ $gamestudio Implement the next playable prototype slice, then define QA checks.
 ```text
 SKILL.md
 references/
+  asset-routing.md
   godot.md
+  handoff-debug.md
+  minimal-workflow.md
   roles.md
+  source-boundary.md
   templates.md
   workflows.md
 ```

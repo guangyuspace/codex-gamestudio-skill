@@ -13,16 +13,16 @@
 - Out:
 
 ## Systems Touched
-- 
+-
 
 ## Acceptance Criteria
-- 
+-
 
 ## Risks
-- 
+-
 
 ## Verification
-- 
+-
 ```
 
 ## Feature Specification
@@ -36,20 +36,20 @@
 - As a player, I want...
 
 ## Rules
-- 
+-
 
 ## Data / Tuning
 | Field | Value | Notes |
 |---|---:|---|
 
 ## UI / Feedback
-- 
+-
 
 ## Technical Requirements
-- 
+-
 
 ## Acceptance Criteria
-- 
+-
 ```
 
 ## QA Report
@@ -60,13 +60,13 @@
 ## Build / Context
 
 ## Tested Paths
-- 
+-
 
 ## Findings
 - [Severity] [Issue] - [Repro] - [Expected]
 
 ## Regression Risks
-- 
+-
 
 ## Release Readiness
 [Ready / Not ready / Ready with risks]
@@ -78,17 +78,18 @@
 # Phase [N] Completion
 
 ## Completed
-- 
+-
 
 ## Verified
-- 
+-
 
 ## Known Risks
-- 
+-
 
 ## Recommended Next Phase
-- 
+-
 ```
+
 ## Long Project Handoff
 
 ```md
@@ -101,20 +102,42 @@
 - Status:
 
 ## Latest Completed Work
-- 
+-
 
 ## Important Modified Files
-- 
+-
 
 ## Verification
 - Command:
 - Result:
 
 ## Known Risks
-- 
+-
 
 ## Next Safest Task
-- 
+-
+```
+
+## Debug Handoff
+
+```md
+# DEBUG_HANDOFF
+
+## 錯誤現象
+
+## 最小重現步驟
+
+## 目前錯誤訊息 / log
+
+## 已嘗試修法
+
+## 失敗原因
+
+## 根因假設
+
+## 下一個驗證步驟
+
+## 不准再重複的修法
 ```
 
 ## Response Handoff Block
@@ -127,3 +150,5 @@
 - 目前風險：
 - 下一個最安全任務：
 ```
+
+When a repeated bug triggers `DEBUG_HANDOFF.md`, also state whether it was updated in the normal response text.
